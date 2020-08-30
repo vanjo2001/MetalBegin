@@ -13,11 +13,16 @@ class ActionView: MTKView {
     var commandQueue: MTLCommandQueue!
     var renderPipelineState: MTLRenderPipelineState!
     
-    var vertices: [SIMD3<Float>] = [ SIMD3<Float>(0, 1, 0),
-                                     SIMD3<Float>(-0.5, 0, 0),
-                                   SIMD3<Float>(0, -1, 0),
-                                   SIMD3<Float>(0.5, 0, 0),
-                                   SIMD3<Float>(0, 1, 0)
+    struct VertexIn {
+        var position: SIMD3<Float>
+        var color: SIMD4<Float>
+    }
+    
+    
+    var vertices: [VertexIn] = [
+                                VertexIn(position: SIMD3<Float>(0, 1, 0), color: SIMD4<Float>(1, 0, 0, 1)),
+                                VertexIn(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)),
+                                VertexIn(position: SIMD3<Float>(1, -1, 0), color: SIMD4<Float>(0, 0, 1, 1))
                                 ]
     
     var vertexBuffer: MTLBuffer!
@@ -39,7 +44,7 @@ class ActionView: MTKView {
     }
     
     func createBuffer() {
-        vertexBuffer = device?.makeBuffer(bytes: vertices, length: MemoryLayout<SIMD3<Float>>.stride * vertices.count, options: [])
+        vertexBuffer = device?.makeBuffer(bytes: vertices, length: MemoryLayout<VertexIn>.stride * vertices.count, options: [])
     }
     
     func createRenderPipelineState() {
