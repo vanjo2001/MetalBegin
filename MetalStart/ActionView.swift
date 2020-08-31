@@ -13,16 +13,11 @@ class ActionView: MTKView {
     var commandQueue: MTLCommandQueue!
     var renderPipelineState: MTLRenderPipelineState!
     
-    struct VertexIn {
-        var position: SIMD3<Float>
-        var color: SIMD4<Float>
-    }
     
-    
-    var vertices: [VertexIn] = [
-                                VertexIn(position: SIMD3<Float>(0, 1, 0), color: SIMD4<Float>(1, 0, 0, 1)),
-                                VertexIn(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)),
-                                VertexIn(position: SIMD3<Float>(1, -1, 0), color: SIMD4<Float>(0, 0, 1, 1))
+    var vertices: [Vertex] = [
+                                Vertex(position: SIMD3<Float>(0, 1, 0), color: SIMD4<Float>(1, 0, 0, 1)),
+                                Vertex(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)),
+                                Vertex(position: SIMD3<Float>(1, -1, 0), color: SIMD4<Float>(0, 0, 1, 1))
                                 ]
     
     var vertexBuffer: MTLBuffer!
@@ -44,7 +39,7 @@ class ActionView: MTKView {
     }
     
     func createBuffer() {
-        vertexBuffer = device?.makeBuffer(bytes: vertices, length: MemoryLayout<VertexIn>.stride * vertices.count, options: [])
+        vertexBuffer = device?.makeBuffer(bytes: vertices, length: Vertex.stride(vertices.count), options: [])
     }
     
     func createRenderPipelineState() {
@@ -52,10 +47,22 @@ class ActionView: MTKView {
         let vertexFunction = library?.makeFunction(name: "basic_vertex_shader")
         let fragmentFunction = library?.makeFunction(name: "basic_fragment_shader")
         
+        let vertexDescriptor = MTLVertexDescriptor()
+        vertexDescriptor.attributes[0].format = .float3
+        vertexDescriptor.attributes[0].bufferIndex = 0
+        vertexDescriptor.attributes[0].offset = 0
+        
+        vertexDescriptor.attributes[1].format = .float4
+        vertexDescriptor.attributes[1].bufferIndex = 0
+        vertexDescriptor.attributes[1].offset = SIMD3<Float>.size()
+        
+        vertexDescriptor.layouts[0].stride = Vertex.stride()
+        
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = colorPixelFormat
         renderPipelineDescriptor.vertexFunction = vertexFunction
         renderPipelineDescriptor.fragmentFunction = fragmentFunction
+        renderPipelineDescriptor.vertexDescriptor = vertexDescriptor
         
         do {
             renderPipelineState = try device?.makeRenderPipelineState(descriptor: renderPipelineDescriptor)

@@ -16,6 +16,7 @@
 		4582246F24FADCD300291792 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4582246D24FADCD300291792 /* Main.storyboard */; };
 		4582247B24FADCD300291792 /* MetalStartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582247A24FADCD300291792 /* MetalStartTests.swift */; };
 		4582248624FADCD300291792 /* MetalStartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582248524FADCD300291792 /* MetalStartUITests.swift */; };
+		459A74C824FD944D00E9F079 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459A74C724FD944D00E9F079 /* Types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		4582248124FADCD300291792 /* MetalStartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalStartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4582248524FADCD300291792 /* MetalStartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalStartUITests.swift; sourceTree = "<group>"; };
 		4582248724FADCD300291792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		459A74C724FD944D00E9F079 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				45210B4E24FAE578007CA50F /* ActionView.swift */,
 				45210B5124FAED1E007CA50F /* Shader.metal */,
 				4582246D24FADCD300291792 /* Main.storyboard */,
+				459A74C724FD944D00E9F079 /* Types.swift */,
 				4582246424FADCD200291792 /* AppDelegate.swift */,
 				4582246624FADCD200291792 /* ViewController.swift */,
 				45210B5024FAE63B007CA50F /* ThirdParty */,
@@ -274,6 +277,7 @@
 				45210B4F24FAE578007CA50F /* ActionView.swift in Sources */,
 				4582246A24FADCD200291792 /* MetalStart.xcdatamodeld in Sources */,
 				4582246724FADCD200291792 /* ViewController.swift in Sources */,
+				459A74C824FD944D00E9F079 /* Types.swift in Sources */,
 				45210B5224FAED1E007CA50F /* Shader.metal in Sources */,
 				4582246524FADCD200291792 /* AppDelegate.swift in Sources */,
 			);
