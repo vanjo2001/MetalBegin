@@ -21,6 +21,7 @@ struct RasterizerData {
 
 vertex RasterizerData basic_vertex_shader(const VertexIn vIn [[ stage_in ]]) {
     
+    
     RasterizerData rd;
     rd.position = float4(vIn.position, 1);
     rd.color = vIn.color;

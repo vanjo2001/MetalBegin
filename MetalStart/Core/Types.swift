@@ -15,6 +15,7 @@ protocol sizeable {
 }
 
 extension sizeable {
+    
     static func size() -> Int {
         return MemoryLayout<Self>.size
     }
