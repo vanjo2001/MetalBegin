@@ -13,6 +13,7 @@
 		45263406250A85E70012B356 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45263405250A85E70012B356 /* Player.swift */; };
 		45263409250A8E420012B356 /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45263408250A8E420012B356 /* Renderable.swift */; };
 		4526340B250A912F0012B356 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4526340A250A912F0012B356 /* Node.swift */; };
+		457D22C8250C1D17008E6A00 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D22C7250C1D17008E6A00 /* Math.swift */; };
 		4582246524FADCD200291792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582246424FADCD200291792 /* AppDelegate.swift */; };
 		4582246724FADCD200291792 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582246624FADCD200291792 /* ViewController.swift */; };
 		4582246A24FADCD200291792 /* MetalStart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4582246824FADCD200291792 /* MetalStart.xcdatamodeld */; };
@@ -55,6 +56,7 @@
 		45263405250A85E70012B356 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		45263408250A8E420012B356 /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 		4526340A250A912F0012B356 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		457D22C7250C1D17008E6A00 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		4582246124FADCD200291792 /* MetalStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4582246424FADCD200291792 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4582246624FADCD200291792 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		457D22C6250C1CFB008E6A00 /* Maths */ = {
+			isa = PBXGroup;
+			children = (
+				457D22C7250C1D17008E6A00 /* Math.swift */,
+			);
+			path = Maths;
+			sourceTree = "<group>";
+		};
 		4582245824FADCD200291792 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 		4582246324FADCD200291792 /* MetalStart */ = {
 			isa = PBXGroup;
 			children = (
+				457D22C6250C1CFB008E6A00 /* Maths */,
 				45837CC82509827900535D15 /* GameShit */,
 				45837CBC250928B500535D15 /* Library */,
 				459436472502D30900C8B678 /* Display */,
@@ -388,6 +399,7 @@
 				45837CC22509542700535D15 /* VertexDescriptorLibrary.swift in Sources */,
 				459A74C824FD944D00E9F079 /* Types.swift in Sources */,
 				45210B5224FAED1E007CA50F /* Shader.metal in Sources */,
+				457D22C8250C1D17008E6A00 /* Math.swift in Sources */,
 				4582246524FADCD200291792 /* AppDelegate.swift in Sources */,
 				45837CBA250925E900535D15 /* Preferences.swift in Sources */,
 				45837CC425095FD900535D15 /* RenderPipelineDescriptorLibrary.swift in Sources */,
