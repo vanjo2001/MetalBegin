@@ -12,15 +12,23 @@ class GameObject: Node {
         mesh = MeshLibrary.mesh(meshType)
     }
     
-    var time: Float = 0.0
-    
-    func update(deltaTime: Float) {
+    override func update(deltaTime: Float) {
         
-        time += deltaTime
+        if (Keyboard.isKeyPressed(.rightArrow)) {
+            position.x += deltaTime
+        }
+        if (Keyboard.isKeyPressed(.leftArrow)) {
+            position.x -= deltaTime
+        }
+        if (Keyboard.isKeyPressed(.upArrow)) {
+            position.y += deltaTime
+        }
+        if (Keyboard.isKeyPressed(.downArrow)) {
+            position.y -= deltaTime
+        }
         
-//        self.position.x = cos(time)
-        self.scale = SIMD3<Float>(repeating: cos(time))
-//        self.rotation.z = cos(time)
+        
+        rotation.z += 0.02
         
         updateModelConstants()
     }
